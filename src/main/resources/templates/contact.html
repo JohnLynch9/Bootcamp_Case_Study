@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Contact Us</title>
+<style>
+	input{border: 2px solid #65039e}
+</style>
+<link rel="stylesheet" href="styles/topnavbar.css">
+</head>
+<body style="margin:0; background:#181818; color: white;">
+	<div th:include="navbar.html" ></div>
+	<div style="position: relative;min-height: 90vh;">
+	<div style="padding-bottom: 9.5rem; margin: 10px;">
+	
+	<h1 style="text-align: center;">Request Art</h1>
+	<p>Write your name and request for art that I could make. Just don't be named Greg, I don't like that name so I ignore it.</p>
+	
+	<form action="#" th:action="@{/contact}" th:object="${message}" method="post">
+		<div>
+			<label>Art Name: </label>
+			<input type="text" th:field="*{name}" />
+		</div>
+		<div>
+			<label>Art Request: </label>
+			<input type="text" th:field="*{content}" style="height: 100px; width: 200px;" />
+		</div>
+		<div>
+			<input type="submit" value="Send" />
+		</div>
+	</form>
+	
+	
+	
+	</div>
+	<br>
+	<div th:include="footer.html" ></div>
+	</div>
+</body>
+</html>

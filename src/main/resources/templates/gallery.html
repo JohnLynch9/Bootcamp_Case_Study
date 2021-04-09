@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>The Gallery</title>
+<link rel="stylesheet" href="styles/art.css">
+<style>
+	input{border: 2px solid #65039e;}
+</style>
+<link rel="stylesheet" href="styles/topnavbar.css">
+</head>
+<body style="margin:0; background:#181818; color: white;">
+	<div th:include="navbar.html" ></div>
+	<div style="position: relative;min-height: 90vh;">
+	<div style="padding-bottom: 9.5rem; margin: 10px;">
+	
+	<h1 style="text-align: center;">Add Art</h1>
+	
+	<form action="#" th:action="@{/saveArt}" th:object="${art}" method="post">
+		<fieldset>
+			<legend style="color:#65039e;">Add Art</legend>
+			<div>
+				<label>Artist Name: </label>
+				<input type="text" th:field="*{artistname}" />
+			</div>
+			<div>
+				<label>Art Piece Name: </label>
+				<input type="text" th:field="*{artname}" />
+			</div>
+			<div>
+				<label for="image">Image Address: </label>
+				<input type="text" th:field="*{imageaddress}" />
+			</div>
+			<div>
+				<input type="submit" tabindex="5" value="Add Art" />
+			</div>
+		</fieldset>
+	</form>
+	<h2 style="text-align: center;">Art Corner</h2>
+	
+	<div style="display: flex;
+    justify-content: center;
+    flex-wrap: wrap;">
+	<div th:each="artl: ${listArt}" style="border: solid #65039e 1px;
+    background-color:#65039e;
+    margin: 10px;">
+			<a th:href="${artl.imageaddress}"><img style="width: 300px;
+    							height: 200px; overflow:hidden;
+    							object-fit: cover; border: solid #65039e 2px;
+    							display: flex; margin: 7.5px solid;
+    							background-color:#65039e;" th:src="${artl.imageaddress}"></a>
+    		<br>
+		<div style="padding: 7.5px">
+			<p>Submission by:</p>
+			<p th:text="${artl.user}"></p>
+			<p>Artist:</p>
+			<p th:text="${artl.artistname}"></p>
+			<br>
+			<p>Title:</p>
+			<p th:text="${artl.artname}"></p>
+		</div>
+	</div>
+	</div>
+	
+	<br>
+	
+	</div>
+	<br>
+	<div th:include="footer.html" ></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Requests listed here</title>
+<style>
+td {
+       height: 40px;
+       width: 25%;
+       }
+
+tr,
+td,
+table {
+            border: 1px solid white;
+        }
+</style>
+<link rel="stylesheet" href="styles/topnavbar.css">
+</head>
+<body style="margin:0; background:#181818; color: white;">
+	<div th:include="navbar.html" ></div>
+	<div style="position: relative;min-height: 90vh;">
+	<div style="padding-bottom: 9.5rem; margin: 10px;">
+	
+	<h1 style="text-align: center;">Request Listings</h1>
+	
+	<div>
+	<table style="border: 2px solid #65039e">
+	<tr>
+		<td style = "text-align: center;">email</td>
+		<td style = "text-align: center;">Art Name</td>
+		<td style = "text-align: center;">Request</td>
+		<td style = "text-align: center;">Actions</td>
+	</tr>
+	<tr th:each="message: ${list}">
+		<td th:text="${message.user.name}" />
+		<td th:text="${message.name}" />
+		<td th:text="${message.content}" />
+		<td style="border: 1px solid lightblue;">
+			<a href="#" th:href="@{/deleteMessage(id=${message.messageid})}" style="color:purple;">Delete</a>
+			<a href="#" th:href="@{/editMessage(id=${message.messageid})}" style="color:purple;">Edit</a>
+		</td>
+	</tr>
+	</table>
+	</div>
+	
+	
+	</div>
+	<br>
+	<div th:include="footer.html" ></div>
+	</div>
+</body>
+</html>

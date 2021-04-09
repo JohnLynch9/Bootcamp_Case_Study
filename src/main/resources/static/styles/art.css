@@ -1,0 +1,22 @@
+.image_gallery{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.gallery_piece{
+    width: 300px;
+    height: 200px;
+    overflow:hidden;
+    object-fit: cover;
+    border: solid #65039e 1px;
+    display: flex;
+    margin: 5px;
+}
+.gallery_piece:hover {
+    box-shadow: 5px 5px rgba(0, 0, 255, 0.575);
+}
+.art{
+	border: solid #65039e 1px;
+    background-color:#65039e;
+    margin: 7px solid;
+}

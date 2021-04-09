@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" style="height: 100%;">
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome Page</title>
+<link rel="stylesheet" href="styles/topnavbar.css">
+</head>
+<body style="margin:0; background:#181818; color: white; height: 100%; background-image: url(https://inscribemag.com/wp-content/uploads/Blurred-A-set-of-Free-Blurred-Background-Images.jpg);
+			background-position: center;background-repeat: no-repeat;background-size: cover;">
+	<div th:include="navbar.html" ></div>
+	<div style="position: relative;min-height: 90vh; ">
+	<div style="padding-bottom: 9.5rem; margin: 10px;">
+	
+	<h1 style="text-align: center;">Welcome <span th:text="${loguser}"></span></h1>
+	
+	<p>Today is a good day to cry</p>
+	<br>
+	<br>
+	<p>Hello and welcome to Johnny's art corner. This site hopes to allow family and friends to share art and art 
+	requests for various creators. At the moment this site is scaled for personal family and friends of the creator.</p>
+	<p>To begin an art request simply click on the top bar icon for "Request Art" and it will take you to the request art page. 
+	Enter the text for the name of the art piece and the description and it will save your request. To see requests and change
+	them if you need, click on forum.</p>
+	<p>To submit and see art go to the gallery and add art via the "add art table". Enter the artist name, the Title of the work, 
+	and the URL to access the piece. After you submit it will show up in the gallery with you as the submitter.</p>
+	
+	</div>
+	<br>
+	<div th:include="footer.html" ></div>
+	</div>
+</body>
+</html>

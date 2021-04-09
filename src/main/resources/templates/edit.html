@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>edit message</title>
+</head>
+<body style="margin:0; background:#181818; color: white;">
+	<div style="position: relative;min-height: 90vh;">
+	<div style="padding-bottom: 9.5rem; margin: 10px;">
+
+<h1 style="text-align: center;">Edit the Previous Message</h1>
+
+<form action="#" th:action="@{/editMessage}" th:object="${currMessage}" method="post">
+	<div>
+		<label>Edited Name: </label>
+		<input type="text" th:field="*{name}" />
+	</div>
+	<div>
+		<label>Edited Request: </label>
+		<input type="text" th:field="*{content}" />
+	</div>
+	<div>
+		<input type="submit" value="Send" />
+	</div>
+</form>
+
+</div>
+</div>
+</body>
+</html>
